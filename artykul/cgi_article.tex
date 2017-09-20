@@ -23,7 +23,7 @@
 \title{Emotion recognition in computer games and films}
 
 \author{Filip Rynkiewicz%
-\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem lodz university of technology, Lodz, Poland, \hfil\break 	filip.rynkiewicz@dokt.p.lodz.pl}}
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem Lodz University of Technology, Lodz, Poland, \hfil\break 	filip.rynkiewicz@dokt.p.lodz.pl}}
 
 
 % The paper headers
@@ -69,14 +69,14 @@ Emotions can be detected by certain characteristics that could be classified to 
 	\end{itemize}
 \end{itemize}
 This paper will be focused on group of psychological signals, especially on EEG and pupil diameter. It will be explained how to detect certain emotion based on fusions of the stimuli. There are plenty of researches where authors combine EEG with pupil diameter or even with eye trackers data, and those combined methods are more reliable and with better accuracy then individual ones \cite{WeiLongBoNanBaoLiang2014,CalvoDMello2010,SoleymaniPanticPun2002}. 
+
+\subsection{Subjects and stimuli}
+Using variety of movie clips, especially selected to those research and shown to participators, the EEG signal and pupil diameter changes was recorded. Key feature of those movie clips is to cover different emotional responses to get results as best and accurate as possible. Psychologists recommended videos from 1 to 10 minutes long for elicitation of single emotion\cite{SchaeferNilsSanchezPhilippot2010}.
+
 \section{EEG}
 One of the most popular methods of emotion recognition are based on analysis of electroencephalography signals. Numerous researches\cite{LinMusic,GaoMehmood,NieWangShiLu} has shown that the brain activity, which EEG collect, is the most reliable source for emotion recognition. Main core of those studies is to find brain regions and frequency bands most related to those emotions. Studies of \cite{SarloBuodoPoliPalomba} showed that activation for unpleasant emotions was prominent over the right posterior regions in the alpha band. In \cite{SchmidtTrainor2001} authors found that frontal brain electrical activity is closely related to musical emotions, and in \cite{LiLu2009} authors confirmed theory that gamma band is also related to music emotions.
-\subsection{Subjects and stimuli}
-Using variety of movie clips, especially selected to those research and shown to participators, the EEG signals was recorded. Key feature of those movie clips is to cover different emotional responses to get results as best and accurate as possible. Psychologists recommended videos from 1 to 10 minutes long for elicitation of single emotion\cite{SchaeferNilsSanchezPhilippot2010}.
 
 \subsection{Data acquisition} 
-
-
 Gathering data of brain activity is done be special EEG cap, where \textit{AgCl} electrodes placed on it are collecting brain activity in certain areas. Most common used layout of electrodes is 10-20 system, shown in \Ref{fig:1020electrodes}{Figure}.
 
 \begin{figure}[ht]
@@ -116,18 +116,62 @@ In  \cite{WeiLongBoNanBaoLiang2014} they smoothing features using linear dynamic
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{performanceOfClassifier1}
-	\caption{The performance of classifiers using different kinds of frequency band features. For \cite{WeiLongBoNanBaoLiang2014}.}
+	\caption{The performance of classifiers in \% using different kinds of frequency band features. For \cite{WeiLongBoNanBaoLiang2014}.}
 	\label{fig:performanceofclassifier1}
 \end{figure}
 Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{Figure}. ASM feature is concatenation of DASM nad RASM. As we can see, Delta and Gamma frequency bands perform better than Theta and Alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  find  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
 \newline
 \par In \cite{SoleymaniPanticPun2002} in EEG there was only DE feature. They have used SVM classification with RBF kernel.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{performanceOfClassifier2}
+	\caption{The performance of classifiers using different kinds of frequency band features. For \cite{SoleymaniPanticPun2002}.}
+	\label{fig:performanceofclassifier2}
+\end{figure}
+The linear discrimination criterion was calculated for EEG signals.Dividing between class variance by within class variance for any given feature.
+For arousal classification, PSD in alpha bands of occipital electrodes was found to be the most discriminant features. In contrast, valence beta and gamma bands of temporal electrodes are more informative. The between class to within class variance ratios are higher for the best arousal EEG features. The higher linear discrimination criterion for best arousal features explains the superior classification rate for arousal dimension.
+
+
 
 \section{Pupil diameter}
-Th second method is the analysis of the pupil diameter \cite{ZhaiBarreto}. 
+Based on human eye observation the theory was forged. Pupil diameter is changing in different emotional states. Disadvantage of this solution is that pupil is highly dependant on the light. First step to gather data from pupil is to create lighting reflex model. Most common and simplest method is principal component analysis (PCA).
+\subsection{Light reflex model}
+Assuming that \textit{Y} is the $M \times N_{p}$, of pupillary response for the same picture for \textit{$N_{p}$} participant and \textit{M} samples, \textit{Y} consists of three components
+\begin{equation}
+Y = A + B + C
+\end{equation}
+where \textit{A} is the lighting influence, \textit{B} is the emotional response and \textit{C} is the noise. Extracting first component from PCA to approximate the pupil response for the lightning changes during the experiments.
+\subsection{Data acquisition}
+To gather data the Eye-Tracker devices was used. Those apparatus are able to collect position of the projected eye gaze on the screen, pupil diameter, the moments when the eyes were closed and distance of the participant's eyes to the gaze tracker device. Eye blinking creates gaps in eye gaze and pupil record, thus the linear interpolation was used to replace missing samples.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{pupilDiameter1}
+	\caption{Average pupil diameter. For \cite{WeiLongBoNanBaoLiang2014}.}
+	\label{fig:pupilSize1}
+\end{figure}
+\newline
+As it can be seen at \Ref{fig:pupilSize1}{Figure} for 12 participants the smallest average value have neutral emotion, except subject 1.
 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{pupilDiameter2}
+	\caption{
+		From top to bottom: In the first plot, there is an example of pupil diameter measures from three different participants in response to one video. The second plot shows the first principal component extracted by PCA from the time series shown in the first plot (the lighting effect). The bottom plot shows the pupil diameter of the blue signal in the first plot after reducing the lighting effect\cite{SoleymaniPanticPun2002}}
+	\label{fig:pupilDiameter2}
+\end{figure}
 
-\section{Multimodial Fusion}
+At \Ref{fig:pupilDiameter2}{Figure} the examples of pupillary responses, extracted pupillary lighting reflex, and the residual component after removing the light reflex are given.
+\subsection{Classification}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{performanceOfClassifierPupil1}
+	\caption{ Performence in \% of using different features from pupil diameter \cite{WeiLongBoNanBaoLiang2014}}
+	\label{fig:performanceOfClassifierPupil1}
+\end{figure}
+As it can be seen at \Ref{fig:performanceOfClassifierPupil1}{Figure} the DE feature performs much better than PSD, because DE features have the balance ability of discriminating patterns between  lowand high frequency energy.
+ \section{Multimodial Fusion} 
+After the data was gathered the fusion of methods have left. Used in this article examples have implemented the feature level fusion, decision level fusion. 
 \section{Conclusion}
 
 Emotions are sophisticated mechanism in human body, but knowledge how they work can be helpful in many areas. Those signals can be obtained from many of human impulses, such as pupil reflex or brain signals. Using appropriate techniques and devices those characteristics can be collected and analysed to detect emotions.
