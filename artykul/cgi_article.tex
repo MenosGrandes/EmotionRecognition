@@ -49,7 +49,7 @@ In last years technology used in game and film creations has formed need to chec
 }
 Studies on recognition of the human emotions can be useful at many areas. Starting with psychology studies on behavioural disorder with patient that have problems with expressing emotions, through biology studies on creation of emotions in human body and ending with getting feedback from watched movie. Emotions allows to decide if user like what he see or not. That gives them an opportunity to choose if he wants to end it immediately, or even repeat those emotions again. For artists this informations is very desirable, because they can refine theirs creations based on information gathered under the influence of the viewer's reaction. Thanks to those researches artist will know when user will be more interest in action, and where it will be more dull or touching for them. 
 
-In \cite{OrtonyCloreCollins1988} authors are creating theory witch explain generation of emotions in human body. They simplify it to few steps, like in algorithm. First there is a perception of an event then analysis of it based on user's own experience and norms, so finally the event could be classified as certain emotion.
+In \cite{OrtonyCloreCollins1988} authors created theory witch explain generation of emotions in human body. They simplify it to few steps, like in algorithm. First there is a perception of an event then analysis of it based on user's own experience and norms, so finally the event could be classified as certain emotion.
 
 Emotions can be detected by certain characteristics that could be classified to two groups:
 \begin{itemize}
@@ -74,7 +74,7 @@ This paper will be focused on group of psychological signals, especially on EEG 
 Using variety of movie clips, especially selected to those research and shown to participators, the EEG signal and pupil diameter changes was recorded. Key feature of those movie clips is to cover different emotional responses to get results as best and accurate as possible. Psychologists recommended videos from 1 to 10 minutes long for elicitation of single emotion\cite{SchaeferNilsSanchezPhilippot2010}.
 
 \section{EEG}
-One of the most popular methods of emotion recognition are based on analysis of electroencephalography signals. Numerous researches\cite{LinMusic,GaoMehmood,NieWangShiLu} has shown that the brain activity, which EEG collect, is the most reliable source for emotion recognition. Main core of those studies is to find brain regions and frequency bands most related to those emotions. Studies of \cite{SarloBuodoPoliPalomba} showed that activation for unpleasant emotions was prominent over the right posterior regions in the alpha band. In \cite{SchmidtTrainor2001} authors found that frontal brain electrical activity is closely related to musical emotions, and in \cite{LiLu2009} authors confirmed theory that gamma band is also related to music emotions.
+One of the most popular methods of emotion recognition are based on analysis of electroencephalography signals. Numerous researches\cite{LinMusic,GaoMehmood,NieWangShiLu,AdolphsTranesDamasio2003,DamasioGrabowski2000} has shown that the brain activity, which EEG collect, is the most reliable source for emotion recognition. Main core of those studies is to find brain regions and frequency bands most related to those emotions. Studies of \cite{SarloBuodoPoliPalomba} showed that activation for unpleasant emotions was prominent over the right posterior regions in the alpha band. In \cite{SchmidtTrainor2001} authors found that frontal brain electrical activity is closely related to musical emotions, and in \cite{LiLu2009} authors confirmed theory that gamma band is also related to music emotions.
 
 \subsection{Data acquisition} 
 Gathering data of brain activity is done be special EEG cap, where \textit{AgCl} electrodes placed on it are collecting brain activity in certain areas. Most common used layout of electrodes is 10-20 system, shown in \Ref{fig:1020electrodes}{Figure}.
@@ -111,7 +111,7 @@ where $X_{LEFT}$ and$X_{RIGHT}$ are DE features of left and right hemisphere of 
 \newpage
 \subsection{Classification}
 After the data was collected and extracted the support vector machine (SVM) was used as classifier, in both examples.
-In  \cite{WeiLongBoNanBaoLiang2014} they smoothing features using linear dynamic system (LDS).
+In  \cite{WeiLongBoNanBaoLiang2014} they smoothed features using linear dynamic system (LDS).
 
 \begin{figure}[ht]
 	\centering
@@ -119,7 +119,7 @@ In  \cite{WeiLongBoNanBaoLiang2014} they smoothing features using linear dynamic
 	\caption{The performance of classifiers in \% using different kinds of frequency band features. For \cite{WeiLongBoNanBaoLiang2014}.}
 	\label{fig:performanceofclassifier1}
 \end{figure}
-Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{Figure}. ASM feature is concatenation of DASM nad RASM. As we can see, Delta and Gamma frequency bands perform better than Theta and Alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  find  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
+Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{Figure}. ASM feature is concatenation of DASM nad RASM. As we can see, delta and gamma frequency bands perform better than theta and alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  find  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
 \newline
 \par In \cite{SoleymaniPanticPun2002} in EEG there was only DE feature. They have used SVM classification with RBF kernel.
 \begin{figure}[ht]
@@ -128,7 +128,7 @@ Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{F
 	\caption{The performance of classifiers using different kinds of frequency band features. For \cite{SoleymaniPanticPun2002}.}
 	\label{fig:performanceofclassifier2}
 \end{figure}
-The linear discrimination criterion was calculated for EEG signals.Dividing between class variance by within class variance for any given feature.
+The linear discrimination criterion was calculated for EEG signals. Dividing between class variance by within class variance for any given feature.
 For arousal classification, PSD in alpha bands of occipital electrodes was found to be the most discriminant features. In contrast, valence beta and gamma bands of temporal electrodes are more informative. The between class to within class variance ratios are higher for the best arousal EEG features. The higher linear discrimination criterion for best arousal features explains the superior classification rate for arousal dimension.
 
 
@@ -136,7 +136,7 @@ For arousal classification, PSD in alpha bands of occipital electrodes was found
 \section{Pupil diameter}
 Based on human eye observation the theory was forged. Pupil diameter is changing in different emotional states. Disadvantage of this solution is that pupil is highly dependant on the light. First step to gather data from pupil is to create lighting reflex model. Most common and simplest method is principal component analysis (PCA).
 \subsection{Light reflex model}
-Assuming that \textit{Y} is the $M \times N_{p}$, of pupillary response for the same picture for \textit{$N_{p}$} participant and \textit{M} samples, \textit{Y} consists of three components
+Assuming that \textit{Y} is the $M \times N_{p}$ matrix of pupillary response for the same picture for \textit{$N_{p}$} participant and \textit{M} samples, \textit{Y} consists of three components
 \begin{equation}
 Y = A + B + C
 \end{equation}
@@ -162,7 +162,7 @@ As it can be seen at \Ref{fig:pupilSize1}{Figure} for 12 participants the smalle
 
 At \Ref{fig:pupilDiameter2}{Figure} the examples of pupillary responses, extracted pupillary lighting reflex, and the residual component after removing the light reflex are given.
 \subsection{Classification}
-
+As in the EEG for classification of signal, for both examples, the SVM was used.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{performanceOfClassifierPupil1}
@@ -171,10 +171,34 @@ At \Ref{fig:pupilDiameter2}{Figure} the examples of pupillary responses, extract
 \end{figure}
 As it can be seen at \Ref{fig:performanceOfClassifierPupil1}{Figure} the DE feature performs much better than PSD, because DE features have the balance ability of discriminating patterns between  lowand high frequency energy.
  \section{Multimodial Fusion} 
-After the data was gathered the fusion of methods have left. Used in this article examples have implemented the feature level fusion, decision level fusion. 
+After the data was gathered the fusion of methods have left. Used in this article examples have implemented the feature level fusion and decision level fusion. 
+\subsection{Feature level fusion}
+In this approach the features vector from different stimuli were concatenated to form larger feature vector.
+\subsection{Decision level fusion}
+Two classifiers were trained with different features, respectively, and were fused to generate a new classification using some new principles or learning algorithms. In \cite{WeiLongBoNanBaoLiang2014} they applied two principles. One was called max strategy witch selected the higher probabilistic outputs of classifiers trained with a single modality separately as final result. Another was called sum strategy which summed up probabilities of same emotions from different frequency bands and selected higher one.
+\subsection{Results}
+Overall results of experiments for \cite{WeiLongBoNanBaoLiang2014} are shown at \Ref{fig:result1}{Figure}.
+We see that decision level fusion using max strategy and feature level fusion performed better than single modality like EEG or pupil diameter, which achieved average accuracies of 72.98\% and 73.59\%, respectively.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.0\linewidth]{result1}
+	\caption{ Performance in \% of using different multimodal features \cite{WeiLongBoNanBaoLiang2014}}
+	\label{fig:result1}
+\end{figure}
+
+Another results \Ref{fig:result2}{Figure} for \cite{SoleymaniPanticPun2002} has shown that the DLF have the best accuracy for arousal and valance. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.7\linewidth]{result2}
+	\caption{ Performance in \% of using different multimodal features \cite{SoleymaniPanticPun2002}}
+	\label{fig:result2}
+\end{figure}
+
+Difference of results of both researches are really high. For FLF the percentage is  accordingly 66.4 \% and 73.59\%. EEG for PSD feature 62.1 \% and 71.77\% for DE feature.
 \section{Conclusion}
 
-Emotions are sophisticated mechanism in human body, but knowledge how they work can be helpful in many areas. Those signals can be obtained from many of human impulses, such as pupil reflex or brain signals. Using appropriate techniques and devices those characteristics can be collected and analysed to detect emotions.
+Emotions are sophisticated mechanism in human body, but knowledge how they work can be helpful in many areas. Those signals can be obtained from many of human impulses, such as pupil reflex or brain signals. Using appropriate techniques and devices those characteristics can be collected and analysed to detect emotions. Combining those modalities and fusing it with special techniques can lead to better accuracy of methods.
 	
 
 
@@ -185,48 +209,38 @@ Emotions are sophisticated mechanism in human body, but knowledge how they work 
 \bibitem{CalvoDMello2010} R. A. Calvo, S.D'Mello \textit{Affect detection: An interdisciplinary review of models, methods and their applications}, IEEEE Transactions on Affective Computing, vol 1, no1, pp 18-37, 2010
 \bibitem{SoleymaniPanticPun2002} M. Soleymani, M. Pantic, T. Pun \textit{Multimodal Emotion Recognition in Responce to Videos}, IEEE Transaction on Affective Computing, vol. 3, no. 2, april-June 2012
 \bibitem{AdolphsTranesDamasio2003}R. Adolphs, D. Tranel, A.R. Damasio, \textit{Dissociable Neural Systems for Recognizing Emotions}, Brain and Cognition, vol. 52, no. 1, pp. 61-69, June 2003.
-\bibitem{DamasioGrabowski2000} A.R. Damasio, T.J. Grabowski, A. Bechara, H. Damasio, L.L.B.
-Ponto, J. Parvizi, and R.D. Hichwa, \textit{Subcortical and Cortical Brain
+\bibitem{DamasioGrabowski2000} A.R. Damasio, T.J. Grabowski, A. Bechara, H. Damasio, L.L.B. Ponto, J. Parvizi, and R.D. Hichwa, \textit{Subcortical and Cortical Brain
 Activity during the Feeling of Self-Generated Emotions}, Nature
 Neuroscience, vol. 3, no. 10, pp. 1049-1056, Oct. 2000.
 \bibitem{WeiLongBoNanBaoLiang2014} Z. Wei-Long, D. Bo-Nan , L. Bao-Liang 
 \textit{Multimodal Emotion Recognition using EEG and Eye Tracking Data}, IEEE, 2014
 \bibitem{LinMusic}
-Y. P. Lin et al., "EEG-Based Emotion Recognition in Music Listening," in IEEE Transactions on Biomedical Engineering, vol. 57, no. 7, pp. 1798-1806, July 2010.
-doi: 10.1109/TBME.2010.2048568
+Y. P. Lin, \textit{EEG-Based Emotion Recognition in Music Listening},IEEE Transactions on Biomedical Engineering, vol. 57, no. 7, pp. 1798-1806, July 2010.
 \url{http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5458075&isnumber=5484937}
 \bibitem{GaoMehmood}
-Y. Gao, H. J. Lee and R. M. Mehmood, "Deep learninig of EEG signals for emotion recognition," 2015 IEEE International Conference on Multimedia \& Expo Workshops (ICMEW), Turin, 2015, pp. 1-5.
-doi: 10.1109/ICMEW.2015.7169796
+Y. Gao, H. J. Lee and R. M. Mehmood, \textit{Deep learninig of EEG signals for emotion recognition}, IEEE, International Conference on Multimedia \& Expo Workshops (ICMEW), Turin, 2015, pp. 1-5.
 \url{http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7169796&isnumber=7169738}
-\bibitem{NieWangShiLu}Dan Nie, Xiao-Wei Wang, Li-Chen Shi, and Bao-Liang Lu, EEG-based Emotion Recognition during Watching Movies, Proceedings of the 5th International IEEE EMBS Conference on Neural Engineering Cancun, Mexico, April 27 - May 1, 2011 ,\url{https://pdfs.semanticscholar.org/6511/590bc9677922c82747b5d183383f46b50db6.pdf}
-
-\bibitem{ZhaiBarreto}
-J. Zhai and A. Barreto, "Stress Detection in Computer Users Based on Digital Signal Processing of Noninvasive Physiological Variables," 2006 International Conference of the IEEE Engineering in Medicine and Biology Society, New York, NY, 2006, pp. 1355-1358.
-doi: 10.1109/IEMBS.2006.259421
-\url{ http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4462012&isnumber=4461641}
+\bibitem{NieWangShiLu}Dan Nie, Xiao-Wei Wang, Li-Chen Shi, and Bao-Liang Lu, \textit{EEG-based Emotion Recognition during Watching Movies}, IEEE, Proceedings of the 5th International IEEE EMBS Conference on Neural Engineering Cancun, Mexico, April 27 - May 1, 2011 ,\url{https://pdfs.semanticscholar.org/6511/590bc9677922c82747b5d183383f46b50db6.pdf}
 
 \bibitem{SarloBuodoPoliPalomba}
- M. Sarlo, G. Buodo, S. Poli, and D. Palomba, ”Changes in EEG alpha
-power to different disgust elicitors: the specificity of mutilations,”
+ M. Sarlo, G. Buodo, S. Poli, and D. Palomba, \textit{Changes in EEG alpha
+power to different disgust elicitors: the specificity of mutilations}
 Neuroscience Letters, vol. 382, no.3, pp. 291-296, 2005.
-
 \bibitem{SchmidtTrainor2001}
- L. A. Schmidt, and L. J. Trainor, ”Frontal brain electrical activity
-distinguishes valence and intensity of musical emotions,” Cognition
+ L. A. Schmidt, and L. J. Trainor, \textit{Frontal brain electrical activity
+distinguishes valence and intensity of musical emotions} Cognition
 and Emotion, vol. 15, no. 4, pp. 487-500, 2001.
 \bibitem{LiLu2009}
-M. Li, and B. L. Lu, ”Emotion classification based on gamma-band
-EEG,” IEEE Int. Conf. Engineering in Medicine and Biology Society,
+M. Li, and B. L. Lu, \textit{Emotion classification based on gamma-band
+EEG} IEEE Int. Conf. Engineering in Medicine and Biology Society,
 Minneapolis, 2009, pp. 1223-1226.
 \bibitem{JirayucharoensakSuwichaPanngumIsrasenaPasin2014}
-Jirayucharoensak, Suwicha  Pan-ngum, Setha  Israsena, Pasin. (2014). EEG-Based Emotion Recognition Using Deep Learning Network with Principal Component Based Covariate Shift Adaptation. TheScientificWorldJournal. 2014. 627892. 10.1155/2014/627892.
+Jirayucharoensak, Suwicha  Pan-ngum, Setha  Israsena, Pasin. \textit{EEG-Based Emotion Recognition Using Deep Learning Network with Principal Component Based Covariate Shift Adaptation}, TheScientificWorldJournal. 2014. 
  \bibitem{SchaeferNilsSanchezPhilippot2010}
-Alexandre   Schaefer  and  Frédéric   Nils  and  Xavier   Sanchez  and  Pierre   Philippot,
-Assessing the effectiveness of a large database of emotion-eliciting films: A new tool for emotion researchers, 2010
-\url{http://dx.doi.org/10.1080/02699930903274322}
+A.Schaefer ,F. Nils  and  X. Sanchez  and  P. Philippot,
+\textit{Assessing the effectiveness of a large database of emotion-eliciting films: A new tool for emotion researchers}, 2010
 \bibitem{AftanasSavotinaMakhnev2005}
-Aftanas, L.I., Savotina, L.N., Makhnev, V.P. et al. Neurosci Behav Physiol (2005) 35: 951.\url{ https://doi.org/10.1007/s11055-005-0151-9}
+Aftanas, L.I., Savotina, L.N., Makhnev, V.P. et al.\textit{ Neurosci Behav Physiol}, 2005
 
 \end{thebibliography}
 
