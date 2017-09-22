@@ -33,7 +33,7 @@
 \IEEEtitleabstractindextext{%
 \begin{abstract}
 %%% 100 words
-In last years technology used in game and film creations has formed need to check reaction of users on watched image. Human body react on external stimulus by face microchanges, distortions in electroencephalography, pupil adjustments etc. Those processes can be recorded by specified apparatus thus correct analysis of those characteristics can be automated. Thanks to this authors are able to check reaction of viewers on their creations, or even construct algorithms that can do it automatically.
+In last years technology used in game and film creations has formed a need to check people's reaction to watched images. Human body reacts on external stimulus by face microchanges, distortions in electroencephalography, pupil adjustments etc. Those processes can be recorded with specific apparatus thus correct analysis of those characteristics can be automated. Thanks to this authors are able to check viewer's to their creations, or even construct algorithms that can do it automatically.
 
 \end{abstract}
 
@@ -47,11 +47,11 @@ In last years technology used in game and film creations has formed need to chec
 \IEEEraisesectionheading{
 \section{Introduction}
 }
-Studies on recognition of the human emotions can be useful at many areas. Starting with psychology studies on behavioural disorder with patient that have problems with expressing emotions, through biology studies on creation of emotions in human body and ending with getting feedback from watched movie. Emotions allows to decide if user like what he see or not. That gives them an opportunity to choose if he wants to end it immediately, or even repeat those emotions again. For artists this informations is very desirable, because they can refine theirs creations based on information gathered under the influence of the viewer's reaction. Thanks to those researches artist will know when user will be more interest in action, and where it will be more dull or touching for them. 
+Studies on recognition of the human emotions can be useful in many areas. Starting with psychology studies on behavioural disorder with patient that have problems with expressing emotions, through biology studies on creation of emotions in human body and ending with getting feedback from a watched movie. Emotions allow to decide if users like what they see or not. That gives them an opportunity to choose if they wants to end it immediately, or even repeat these emotions again. For artists this informations is very desirable, because they can refine their creations based on the information gathered from user's reactions. Thanks to such research artist will know when users will be more interested in action, when it will be more dull or touching for them. 
 
-In \cite{OrtonyCloreCollins1988} authors created theory witch explain generation of emotions in human body. They simplify it to few steps, like in algorithm. First there is a perception of an event then analysis of it based on user's own experience and norms, so finally the event could be classified as certain emotion.
+In \cite{OrtonyCloreCollins1988} authors created a theory which explains generation of emotions in human body. They simplify it to few steps, like in a algorithm. First there is a perception of an event then analysis of it based on user's own experience and norms, so finally the event can be classified as certain emotion.
 
-Emotions can be detected by certain characteristics that could be classified to two groups:
+Emotions can be detected by certain characteristics that could be classified as one of the two groups:
 \begin{itemize}
 	\item psychological:
 	\begin{itemize}
@@ -68,16 +68,16 @@ Emotions can be detected by certain characteristics that could be classified to 
 		\item facial expressions.
 	\end{itemize}
 \end{itemize}
-This paper will be focused on group of psychological signals, especially on EEG and pupil diameter. It will be explained how to detect certain emotion based on fusions of the stimuli. There are plenty of researches where authors combine EEG with pupil diameter or even with eye trackers data, and those combined methods are more reliable and with better accuracy then individual ones \cite{WeiLongBoNanBaoLiang2014,CalvoDMello2010,SoleymaniPanticPun2002}. 
+This paper will focus on group of psychological signals, especially on EEG and pupil diameter. It will be explained how to detect certain emotion based on fusions of the stimuli. There are plenty of researches where authors combine EEG with pupil diameter or even with eye trackers data, and those combined methods are more reliable and have better accuracy then individual ones \cite{WeiLongBoNanBaoLiang2014,CalvoDMello2010,SoleymaniPanticPun2002}. 
 
 \subsection{Subjects and stimuli}
-Using variety of movie clips, especially selected to those research and shown to participators, the EEG signal and pupil diameter changes was recorded. Key feature of those movie clips is to cover different emotional responses to get results as best and accurate as possible. Psychologists recommended videos from 1 to 10 minutes long for elicitation of single emotion\cite{SchaeferNilsSanchezPhilippot2010}.
+Using a variety of movie clips, especially selected for this research and shown to participators, the EEG signal and pupil diameter changes were recorded. The key feature of those movie clips is to cover different emotional responses to get the best and as accurate results. Psychologists recommended videos from 1 to 10 minutes long for elicitation of single emotion\cite{SchaeferNilsSanchezPhilippot2010}.
 
 \section{EEG}
-One of the most popular methods of emotion recognition are based on analysis of electroencephalography signals. Numerous researches\cite{LinMusic,GaoMehmood,NieWangShiLu,AdolphsTranesDamasio2003,DamasioGrabowski2000} has shown that the brain activity, which EEG collect, is the most reliable source for emotion recognition. Main core of those studies is to find brain regions and frequency bands most related to those emotions. Studies of \cite{SarloBuodoPoliPalomba} showed that activation for unpleasant emotions was prominent over the right posterior regions in the alpha band. In \cite{SchmidtTrainor2001} authors found that frontal brain electrical activity is closely related to musical emotions, and in \cite{LiLu2009} authors confirmed theory that gamma band is also related to music emotions.
+The most popular methods of emotion recognition are based on analysis of electroencephalography signals. Numerous researches\cite{LinMusic,GaoMehmood,NieWangShiLu,AdolphsTranesDamasio2003,DamasioGrabowski2000} has shown that the brain activity, which EEG collects, is the most reliable source for emotion recognition. The core of those studies is to find brain regions and frequency bands most related to those emotions. Studies of \cite{SarloBuodoPoliPalomba} showed that activation for unpleasant emotions was prominent over the right posterior regions in the alpha band. In \cite{SchmidtTrainor2001} authors found that frontal brain electrical activity is closely related to musical emotions, and in \cite{LiLu2009} authors confirmed a theory that gamma band is also related to music emotions.
 
 \subsection{Data acquisition} 
-Gathering data of brain activity is done be special EEG cap, where \textit{AgCl} electrodes placed on it are collecting brain activity in certain areas. Most common used layout of electrodes is 10-20 system, shown in \Ref{fig:1020electrodes}{Figure}.
+Gathering data of brain activity is done by using special EEG cap, where \textit{AgCl} electrodes placed on it are collecting brain activity in certain areas. Most commonly used layout of electrodes is 10-20 system, shown in \Ref{fig:1020electrodes}{Figure}.
 
 \begin{figure}[ht]
 	\centering
@@ -86,14 +86,14 @@ Gathering data of brain activity is done be special EEG cap, where \textit{AgCl}
 	\label{fig:1020electrodes}
 \end{figure}
 
-Signals were recorder mostly in \numrange[range-phrase = --]{1000}{1024} Hz sampling rate. To speed up calculations those characteristics were down sampled to \numrange[range-phrase = --]{200}{256} Hz. Noises and artefacts reduction were done by applying bypass filter between  \numrange{0.5}{70} Hz.
+Signals were recorded mostly in \numrange[range-phrase = --]{1000}{1024} Hz sampling rate. To speed up calculations those characteristics were down sampled to \numrange[range-phrase = --]{200}{256} Hz. Noises and artefacts reduction were done by applying bypass filter between  \numrange{0.5}{70} Hz.
 \subsection{Data extraction}
 Correlation of certain spectral power of EEG signal and emotions relevant processing was observed \cite{AftanasSavotinaMakhnev2005}. There are multiple methods of extracting power spectral density (PSD) from raw signals. Two of them will be expounded.
 
-First \cite{WeiLongBoNanBaoLiang2014} use Fourier transform and Welch algorithm. This method split signal into overlapping segments and the PSD is estimated by averaging the periodograms, in result the power spectrum is smoother. PSD of individual electrode was estimated using 15s long windows with 50 percent overlapping. PSD bands like theta \fromto{4}{8}{Hz}{f} \  ,  slow alpha \fromto{6}{10}{Hz}{f} \  ,  alpha \fromto{8}{12}{Hz}{f} \  ,  beta \fromto{12}{30}{Hz}{f} \\  and  gamma 30Hz $<$ f were extracted from electrodes. In additional 14 symmetrical pairs on the right and left hemisphere was extracted to measure possible asymmetry in brain activity.
+First \cite{WeiLongBoNanBaoLiang2014} use Fourier transform and Welch algorithm. This method splits signal into overlapping segments and the PSD is estimated by averaging the periodograms. In result the power spectrum is smoother. PSD of individual electrodes was estimated using 15s long windows with 50 percent overlapping. PSD bands like theta \fromto{4}{8}{Hz}{f} \  ,  slow alpha \fromto{6}{10}{Hz}{f} \  ,  alpha \fromto{8}{12}{Hz}{f} \  ,  beta \fromto{12}{30}{Hz}{f} \\  and  gamma 30Hz $<$ f were extracted from electrodes. In additional 14 symmetrical pairs on the right and left hemisphere were extracted to measure possible asymmetry in brain activity.
 \newline
 \newline
-Second one use more short-time Fourier transform with non-overlapped Hanning window of 4 s. In addition to PSD the differential entropy (DE), differential asymmetry (DASM) and rational asymmetry (RASM) were extracted and compared. Like in first method five frequency bands was used. Delta \fromto{1}{3}{Hz}{f} \  ,  theta \fromto{4}{7}{Hz}{f} \  ,  alpha \fromto{8}{13}{Hz}{f} \  ,  beta \fromto{14}{30}{Hz}{f} \\ and  gamma \fromto{31}{50}{Hz}{f} \,. Using \Ref{eq:DE}{equation}, DE was calculated.
+Second one use a short-time Fourier transform with non-overlapped Hanning window of 4 s. In addition to PSD the differential entropy (DE), differential asymmetry (DASM) and rational asymmetry (RASM) were extracted and compared. Like in first method five frequency bands were used. Delta \fromto{1}{3}{Hz}{f} \  ,  theta \fromto{4}{7}{Hz}{f} \  ,  alpha \fromto{8}{13}{Hz}{f} \  ,  beta \fromto{14}{30}{Hz}{f} \\ and  gamma \fromto{31}{50}{Hz}{f} \,. Using \Ref{eq:DE}{equation}, DE was calculated.
 \begin{equation}
 \begin{aligned}
 h(X)=\int\limits_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^{2}}}exp \frac{(x - \mu)^{2}}{2\sigma^{2}}log\frac{1}{\sqrt{2\pi\sigma^{2}}}\\ exp\frac{(x - \mu)^{2}}{2\sigma^{2}}dx = \frac{1}{2}log2\pi \me \sigma^{2}
@@ -119,7 +119,7 @@ In  \cite{WeiLongBoNanBaoLiang2014} they smoothed features using linear dynamic 
 	\caption{The performance of classifiers in \% using different kinds of frequency band features. For \cite{WeiLongBoNanBaoLiang2014}.}
 	\label{fig:performanceofclassifier1}
 \end{figure}
-Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{Figure}. ASM feature is concatenation of DASM nad RASM. As we can see, delta and gamma frequency bands perform better than theta and alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  find  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
+Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{Figure}. ASM feature is concatenation of DASM nad RASM. As we can see, delta and gamma frequency bands perform better than theta and alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  see  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
 \newline
 \par In \cite{SoleymaniPanticPun2002} in EEG there was only DE feature. They have used SVM classification with RBF kernel.
 \begin{figure}[ht]
@@ -129,12 +129,12 @@ Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{F
 	\label{fig:performanceofclassifier2}
 \end{figure}
 The linear discrimination criterion was calculated for EEG signals. Dividing between class variance by within class variance for any given feature.
-For arousal classification, PSD in alpha bands of occipital electrodes was found to be the most discriminant features. In contrast, valence beta and gamma bands of temporal electrodes are more informative. The between class to within class variance ratios are higher for the best arousal EEG features. The higher linear discrimination criterion for best arousal features explains the superior classification rate for arousal dimension.
+For arousal classification, PSD in alpha bands of occipital electrodes was found to have the most discriminant features. In contrast, valence beta and gamma bands of temporal electrodes are more informative. The between class to within class variance ratios are higher for the best arousal EEG features. The higher linear discrimination criterion for best arousal features explains the superior classification rate for arousal dimension.
 
 
 
 \section{Pupil diameter}
-Based on human eye observation the theory was forged. Pupil diameter is changing in different emotional states. Disadvantage of this solution is that pupil is highly dependant on the light. First step to gather data from pupil is to create lighting reflex model. Most common and simplest method is principal component analysis (PCA).
+The theory was forged based on the observation of the human eye. Pupil diameter is changing in different emotional states. The disadvantage of this solution is that pupil's diameter is highly dependant on the light. First step to gathering data from a pupil is to create lighting reflex model. The most common and the simplest method is principal component analysis (PCA).
 \subsection{Light reflex model}
 Assuming that \textit{Y} is the $M \times N_{p}$ matrix of pupillary response for the same picture for \textit{$N_{p}$} participant and \textit{M} samples, \textit{Y} consists of three components
 \begin{equation}
@@ -142,7 +142,7 @@ Y = A + B + C
 \end{equation}
 where \textit{A} is the lighting influence, \textit{B} is the emotional response and \textit{C} is the noise. Extracting first component from PCA to approximate the pupil response for the lightning changes during the experiments.
 \subsection{Data acquisition}
-To gather data the Eye-Tracker devices was used. Those apparatus are able to collect position of the projected eye gaze on the screen, pupil diameter, the moments when the eyes were closed and distance of the participant's eyes to the gaze tracker device. Eye blinking creates gaps in eye gaze and pupil record, thus the linear interpolation was used to replace missing samples.
+To gather the data the Eye-Tracker devices were used. These apparatus are able to collect position of the projected eye gaze on the screen, pupil diameter, moments when the eyes were closed and a distance of the participant's eyes to the gaze tracker device. Eye blinking creates gaps in eye gaze and pupil record, thus the linear interpolation was used to replace missing samples.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{pupilDiameter1}
@@ -171,11 +171,11 @@ As in the EEG for classification of signal, for both examples, the SVM was used.
 \end{figure}
 As it can be seen at \Ref{fig:performanceOfClassifierPupil1}{Figure} the DE feature performs much better than PSD, because DE features have the balance ability of discriminating patterns between  lowand high frequency energy.
  \section{Multimodial Fusion} 
-After the data was gathered the fusion of methods have left. Used in this article examples have implemented the feature level fusion and decision level fusion. 
+After the data was gathered the fusion of methods is what's left. Examples used in this article have implemented the feature level fusion and decision level fusion. 
 \subsection{Feature level fusion}
-In this approach the features vector from different stimuli were concatenated to form larger feature vector.
+In this approach the features vectors from different stimuli were concatenated to form larger feature vector.
 \subsection{Decision level fusion}
-Two classifiers were trained with different features, respectively, and were fused to generate a new classification using some new principles or learning algorithms. In \cite{WeiLongBoNanBaoLiang2014} they applied two principles. One was called max strategy witch selected the higher probabilistic outputs of classifiers trained with a single modality separately as final result. Another was called sum strategy which summed up probabilities of same emotions from different frequency bands and selected higher one.
+Two classifiers were trained with different features, and were fused to generate a new classification using some new principles or learning algorithms. In \cite{WeiLongBoNanBaoLiang2014} they applied two principles. One was called max strategy which selected the higher probabilistic outputs of classifiers trained with a single modality separately as final result. Another was called sum strategy which summed up probabilities of same emotions from different frequency bands and selected the highest one.
 \subsection{Results}
 Overall results of experiments for \cite{WeiLongBoNanBaoLiang2014} are shown at \Ref{fig:result1}{Figure}.
 We see that decision level fusion using max strategy and feature level fusion performed better than single modality like EEG or pupil diameter, which achieved average accuracies of 72.98\% and 73.59\%, respectively.
