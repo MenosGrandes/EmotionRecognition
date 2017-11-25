@@ -112,22 +112,23 @@ where $X_{LEFT}$ and$X_{RIGHT}$ are DE features of left and right hemisphere of 
 \subsection{Classification}
 After the data was collected and extracted the support vector machine (SVM) was used as classifier, in both examples.
 In  \cite{WeiLongBoNanBaoLiang2014} they smoothed features using linear dynamic system (LDS).
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1.0\linewidth]{performanceOfClassifier1}
+\begin{table}[ht]
+	\centering % to have it centered
 	\caption{The performance of classifiers in \% using different kinds of frequency band features. For \cite{WeiLongBoNanBaoLiang2014}.}
-	\label{fig:performanceofclassifier1}
-\end{figure}
-Result of classification can be bee seen at \Ref{fig:performanceofclassifier1}{Figure}. ASM feature is concatenation of DASM nad RASM. As we can see, delta and gamma frequency bands perform better than theta and alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  see  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
+	\label{table:performanceofclassifier1}
+	\includegraphics[width=1.0\linewidth]{performanceOfClassifier1}
+\end{table}
+
+Result of classification can be bee seen at \Ref{table:performanceofclassifier1}{Table}. ASM feature is concatenation of DASM nad RASM. As we can see, delta and gamma frequency bands perform better than theta and alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  see  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
 \newline
-\par In \cite{SoleymaniPanticPun2002} in EEG there was only DE feature. They have used SVM classification with RBF kernel.
-\begin{figure}[ht]
+\par In \cite{SoleymaniPanticPun2002} in EEG there was only DE feature. They have used SVM classification with RBF kernel. Result of classification can be seen at \Ref{table:performanceofclassifier2}{Table}.
+\begin{table}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{performanceOfClassifier2}
 	\caption{The performance of classifiers using different kinds of frequency band features. For \cite{SoleymaniPanticPun2002}.}
-	\label{fig:performanceofclassifier2}
-\end{figure}
+	\label{table:performanceofclassifier2}
+\end{table}
+
 The linear discrimination criterion was calculated for EEG signals. Dividing between class variance by within class variance for any given feature.
 For arousal classification, PSD in alpha bands of occipital electrodes was found to have the most discriminant features. In contrast, valence beta and gamma bands of temporal electrodes are more informative. The between class to within class variance ratios are higher for the best arousal EEG features. The higher linear discrimination criterion for best arousal features explains the superior classification rate for arousal dimension.
 
@@ -163,37 +164,34 @@ As it can be seen at \Ref{fig:pupilSize1}{Figure} for 12 participants the smalle
 At \Ref{fig:pupilDiameter2}{Figure} the examples of pupillary responses, extracted pupillary lighting reflex, and the residual component after removing the light reflex are given.
 \subsection{Classification}
 As in the EEG for classification of signal, for both examples, the SVM was used.
-\begin{figure}[ht]
+\begin{table}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{performanceOfClassifierPupil1}
-	\caption{ Performence in \% of using different features from pupil diameter \cite{WeiLongBoNanBaoLiang2014}}
-	\label{fig:performanceOfClassifierPupil1}
-\end{figure}
-As it can be seen at \Ref{fig:performanceOfClassifierPupil1}{Figure} the DE feature performs much better than PSD, because DE features have the balance ability of discriminating patterns between  lowand high frequency energy.
+	\caption{ Performance in \% of using different features from pupil diameter \cite{WeiLongBoNanBaoLiang2014}}
+	\label{table:performanceOfClassifierPupil1}
+\end{table}
+As it can be seen at \Ref{table:performanceOfClassifierPupil1}{Table} the DE feature performs much better than PSD, because DE features have the balance ability of discriminating patterns between  lowand high frequency energy.
  \section{Multimodial Fusion} 
 After the data was gathered the fusion of methods is what's left. Examples used in this article have implemented the feature level fusion and decision level fusion. 
-\subsection{Feature level fusion}
-In this approach the features vectors from different stimuli were concatenated to form larger feature vector.
-\subsection{Decision level fusion}
-Two classifiers were trained with different features, and were fused to generate a new classification using some new principles or learning algorithms. In \cite{WeiLongBoNanBaoLiang2014} they applied two principles. One was called max strategy which selected the higher probabilistic outputs of classifiers trained with a single modality separately as final result. Another was called sum strategy which summed up probabilities of same emotions from different frequency bands and selected the highest one.
+First mentioned approach use the features vectors from different stimuli and concatenate them to form larger feature vector. Second one use two classifiers which were trained with different features, and fused to generate a new classification using some new principles or learning algorithms. In \cite{WeiLongBoNanBaoLiang2014} they applied two principles. One was called max strategy which selected the higher probabilistic outputs of classifiers trained with a single modality separately as final result. Another was called sum strategy which summed up probabilities of same emotions from different frequency bands and selected the highest one.
 \subsection{Results}
-Overall results of experiments for \cite{WeiLongBoNanBaoLiang2014} are shown at \Ref{fig:result1}{Figure}.
+Overall results of experiments for \cite{WeiLongBoNanBaoLiang2014} are shown at \Ref{table:result1}{Table}.
 We see that decision level fusion using max strategy and feature level fusion performed better than single modality like EEG or pupil diameter, which achieved average accuracies of 72.98\% and 73.59\%, respectively.
-\begin{figure}[ht]
+\begin{table}[ht]
 	\centering
 	\includegraphics[width=1.0\linewidth]{result1}
 	\caption{ Performance in \% of using different multimodal features \cite{WeiLongBoNanBaoLiang2014}}
-	\label{fig:result1}
-\end{figure}
+	\label{table:result1}
+\end{table}
 
-Another results \Ref{fig:result2}{Figure} for \cite{SoleymaniPanticPun2002} has shown that the DLF have the best accuracy for arousal and valance. 
+Another results \Ref{table:result2}{Table} for \cite{SoleymaniPanticPun2002} has shown that the DLF have the best accuracy for arousal and valance. 
 
-\begin{figure}[ht]
+\begin{table}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{result2}
 	\caption{ Performance in \% of using different multimodal features \cite{SoleymaniPanticPun2002}}
-	\label{fig:result2}
-\end{figure}
+	\label{table:result2}
+\end{table}
 
 Difference of results of both researches are really high. For FLF the percentage is  accordingly 66.4 \% and 73.59\%. EEG for PSD feature 62.1 \% and 71.77\% for DE feature.
 \section{Conclusion}
