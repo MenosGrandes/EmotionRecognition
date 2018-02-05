@@ -17,7 +17,7 @@
 \graphicspath{ {figures/} } %%% put all images file into "figures/" subdirectory
 \usepackage[detect-all]{siunitx}
 \newcommand{\me}{\mathrm{e}}
-
+\usepackage{multirow}
 \begin{document}
 
 \title{Emotion recognition in computer games and films}
@@ -117,19 +117,50 @@ In  \cite{WeiLongBoNanBaoLiang2014} they smoothed features using linear dynamic 
 	\centering % to have it centered
 	\caption{The performance of classifiers in \% using different kinds of frequency band features. For \cite{WeiLongBoNanBaoLiang2014}.}
 	\label{table:performanceofclassifier1}
-	\includegraphics[width=1.0\linewidth]{performanceOfClassifier1}
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{\multirow{2}{*}{Feature}} & \multicolumn{6}{c|}{Frequency Bands} \\ \cline{3-8} 
+		\multicolumn{2}{|c|}{} & Delta & Theta & Alpha & Beta & Gamma & Total \\ \hline
+		\multirow{2}{*}{PSD} & Mean & 51.60 & 51.87 & 54.74 & 23.23 & 51.36 & 59.04 \\ \cline{2-8} 
+		& Std & 19.56 & 14.48 & 16.58 & 18.06 & 16.10 & 20.31 \\ \hline
+		\multirow{2}{*}{DE} & Mean & 70.51 & 47/98 & 60.17 & 64.29 & 68.73 & 71.77 \\ \cline{2-8} 
+		& Std & 12.18 & 15.19 & 12.94 & 23.05 & 20.30 & 12.03 \\ \hline
+		\multirow{2}{*}{DASM} & Mean & 61.08 & 43.42 & 4998 & 4696 & 6412 & 6837 \\ \cline{2-8} 
+		& Std & 22.45 & 19.45 & 15.59 & 15.21 & 22.94 & 23.86 \\ \hline
+		\multirow{2}{*}{RASM} & Mean & 61.44 & 44.90 & 48.69 & 48.18 & 62.71 & 66.03 \\ \cline{2-8} 
+		& Std & 22.90 & 12.14 & 16.68 & 15.93 & 21.11 & 24.62 \\ \hline
+		\multirow{2}{*}{ASM} & Mean & 65.18 & 44.78 & 50.29 & 45.19 & 63.92 & 67.91 \\ \cline{2-8} 
+		& Std & 22.32 & 13.87 & 15.91 & 12.77 & 22.19 & 24.45 \\ \hline
+	\end{tabular}%
+}
 \end{table}
-
 Result of classification can be bee seen at \Ref{table:performanceofclassifier1}{Table}. ASM feature is concatenation of DASM nad RASM. As we can see, delta and gamma frequency bands perform better than theta and alpha frequency bands, and total frequency band has a stable and  prominent  accuracy.  Also  we  can  see  that,  differential entropy features get best accuracies in almost all frequency  bands  except  Theta  band  (47.98\%  of  DE  features is  less  than  51.87\%  of  PSD  features).
 \newline
 \par In \cite{SoleymaniPanticPun2002} in EEG there was only DE feature. They have used SVM classification with RBF kernel. Result of classification can be seen at \Ref{table:performanceofclassifier2}{Table}.
-\begin{table}[ht]
-	\centering
-	\includegraphics[width=1.0\linewidth]{performanceOfClassifier2}
-	\caption{The performance of classifiers using different kinds of frequency band features. For \cite{SoleymaniPanticPun2002}.}
-	\label{table:performanceofclassifier2}
-\end{table}
 
+\begin{table}[ht]
+\centering
+\caption{The performance of classifiers using different kinds of frequency band features. For \cite{SoleymaniPanticPun2002}.}
+\label{table:performanceofclassifier2}
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Arousal classification}} & \multicolumn{3}{c|}{\textbf{Valance classification}} \\ \hline
+		Band & Electrode/s & $\sigma^{2}_{bw}$/$\sigma^{2}_{wn}$ & Band & Electrode/s & $\sigma^{2}_{bw}/\sigma^{2}_{wn}$ \\ \hline
+		Slow $\alpha$ & PO4 & 0.18 & $\beta$ & T8 & 0.08 \\ \hline
+		$\alpha$ & PO4 & 0.17 & $\gamma$ & T8 & 0.08 \\ \hline
+		$\theta$ & PO4 & 0.16 & $\beta$ & T7 & 0.07 \\ \hline
+		Slow $\alpha$ & PO3 & 0.15 & $\gamma$ & T7 & 0.06 \\ \hline
+		$\theta$ & Oz & 0.14 & $\gamma$ & P8 & 0.05 \\ \hline
+		Slow $\alpha$ & O2 & 0.14 & $\gamma$ & P7 & 0.05 \\ \hline
+		Slow $\alpha$ & Oz & 0.14 & $\theta$ & Fp1 & 0.04 \\ \hline
+		$\theta$ & O2 & 0.13 & $\beta$ & CP6 & 0.04 \\ \hline
+		$\theta$ & FC6 & 0.13 & $\beta$ & P8 & 0.04 \\ \hline
+		$\alpha$ & PO3 & 0.13 & $\beta$& P7 & 0.04 \\ \hline
+	\end{tabular}
+}
+\end{table}
 The linear discrimination criterion was calculated for EEG signals. Dividing between class variance by within class variance for any given feature.
 For arousal classification, PSD in alpha bands of occipital electrodes was found to have the most discriminant features. In contrast, valence beta and gamma bands of temporal electrodes are more informative. The between class to within class variance ratios are higher for the best arousal EEG features. The higher linear discrimination criterion for best arousal features explains the superior classification rate for arousal dimension.
 
@@ -167,10 +198,30 @@ At \Ref{fig:pupilDiameter2}{Figure} the examples of pupillary responses, extract
 As in the EEG for classification of signal, for both examples, the SVM was used.
 \begin{table}[ht]
 	\centering
-	\includegraphics[width=1.0\linewidth]{performanceOfClassifierPupil1}
-	\caption{ Performance in \% of using different features from pupil diameter \cite{WeiLongBoNanBaoLiang2014}}
-	\label{table:performanceOfClassifierPupil1}
+\caption{ Performance in \% of using different features from pupil diameter \cite{WeiLongBoNanBaoLiang2014}}
+\label{table:performanceOfClassifierPupil1}
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|l|}{Exp} & \multicolumn{1}{l|}{Feature} & \multicolumn{1}{l|}{Acccuracy} & \multicolumn{1}{l|}{Exp} & \multicolumn{1}{l|}{Feature} & \multicolumn{1}{l|}{Accuracy} \\ \hline
+		\multirow{2}{*}{1} & PSD & 65.43 & \multirow{2}{*}{7} & PSD & 33.95 \\ \cline{2-3} \cline{5-6} 
+		& DE & 86.42 &  & DE & \textbf{61.73} \\ \hline
+		\multirow{2}{*}{2} & PSD & 56.79 & \multirow{2}{*}{8} & PSD & 46.91 \\ \cline{2-3} \cline{5-6} 
+		& DE & \textbf{70.37} &  & DE & \textbf{50.63} \\ \hline
+		\multirow{2}{*}{3} & PSD & 54.94 & \multirow{2}{*}{9} & PSD & 43.83 \\ \cline{2-3} \cline{5-6} 
+		& DE & \textbf{56.79} &  & DE & \textbf{59.88} \\ \hline
+		\multirow{2}{*}{4} & PSD & 60.49 & \multirow{2}{*}{10} & PSD & 36.42 \\ \cline{2-3} \cline{5-6} 
+		& DE & \textbf{63.58} &  & DE & \textbf{59.88} \\ \hline
+		\multirow{2}{*}{5} & PSD & 37.65 & \multirow{2}{*}{11} & PSD & 44.44 \\ \cline{2-3} \cline{5-6} 
+		& DE & \textbf{4.877} &  & DE & \textbf{50.62} \\ \hline
+		\multirow{2}{*}{6} & PSD & 33.95 & \multirow{2}{*}{12} & PSD & 34.57 \\ \cline{2-3} \cline{5-6} 
+		& DE & \textbf{4753} &  & DE & \textbf{5062} \\ \hline
+		\multirow{2}{*}{Mean} & PSD & 45.78 & \multirow{2}{*}{Std} & PSD & 11.03 \\ \cline{2-3} \cline{5-6} 
+		& DE & \textbf{58.90} &  & DE & \textbf{10.25} \\ \hline
+	\end{tabular}
+}
 \end{table}
+
 As it can be seen at \Ref{table:performanceOfClassifierPupil1}{Table} the DE feature performs much better than PSD, because DE features have the balance ability of discriminating patterns between  lowand high frequency energy.
  \section{Multimodial Fusion} 
 After the data was gathered the fusion of methods is what's left. Examples used in this article have implemented the feature level fusion and decision level fusion. 
@@ -178,22 +229,51 @@ First mentioned approach use the features vectors from different stimuli and con
 \subsection{Results}
 Overall results of experiments for \cite{WeiLongBoNanBaoLiang2014} are shown at \Ref{table:result1}{Table}.
 We see that decision level fusion using max strategy and feature level fusion performed better than single modality like EEG or pupil diameter, which achieved average accuracies of 72.98\% and 73.59\%, respectively.
+
 \begin{table}[ht]
 	\centering
-	\includegraphics[width=1.0\linewidth]{result1}
-	\caption{ Performance in \% of using different multimodal features \cite{WeiLongBoNanBaoLiang2014}}
-	\label{table:result1}
+\caption{ Performance in \% of using different multimodal features \cite{WeiLongBoNanBaoLiang2014}}
+\label{table:result1}
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		& EEG (DE) & Max Strategy & Sum Strategy & Feature Fusion \\ \hline
+		1    & 83.09    & 83.09        & 83.09        & \textbf{93.59}          \\ \hline
+		2    & 68.22    & 68.22        & 51.31        & \textbf{78.72}          \\ \hline
+		3    & 68.22    & 67.93        & 51.02        & \textbf{68.22}          \\ \hline
+		4    & 85.13    & 68.22        & \textbf{85.13}        & 83.97          \\ \hline
+		5    & 51.31    & 51.31        & 51.31        & \textbf{77.55}          \\ \hline
+		6    & 83.09    & \textbf{83.09}        & \textbf{83.09}        & \textbf{83.09}          \\ \hline
+		7    & 51.31    & \textbf{68.22}        & \textbf{68.22}        & 58.02          \\ \hline
+		8    & 83.09    & \textbf{83.09}        & 83.09        & \textbf{83.38}          \\ \hline
+		9    & 68.22    & 83.09        & 68.22        & 63.56          \\ \hline
+		10   & 68.22    & 68.22        & 68.22        & \textbf{69.10}          \\ \hline
+		11   & \textbf{68.22}    & \textbf{68.22}        & \textbf{68.22}        & 40.82          \\ \hline
+		12   & \textbf{83.09}    & \textbf{83.09}        & 65.89        & \textbf{83.09}          \\ \hline
+		Mean & 71.77    & 72.98        & 68.90        & \textbf{73.59}          \\ \hline
+		Std  & 12.03    & \textbf{10.09}        & 12.85        & 14.43          \\ \hline
+	\end{tabular}
+}
 \end{table}
-
 Another results \Ref{table:result2}{Table} for \cite{SoleymaniPanticPun2002} has shown that the DLF have the best accuracy for arousal and valance. 
 
-\begin{table}[ht]
-	\centering
-	\includegraphics[width=0.7\linewidth]{result2}
-	\caption{ Performance in \% of using different multimodal features \cite{SoleymaniPanticPun2002}}
-	\label{table:result2}
-\end{table}
 
+\begin{table}[ht]
+\centering
+\caption{ Performance in \% of using different multimodal features \cite{SoleymaniPanticPun2002}}
+\label{table:result2}
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Modality}                    & \multicolumn{2}{c|}{\textbf{Classification rate}} \\ \hline
+		\textbf{dimension}                   & \textbf{arousal}             & \textbf{valance}            \\ \hline
+		\textbf{EEG}                         & 62.1\%              & 50.5\%             \\ \hline
+		\textbf{Eye gaze}                    & 71.1\%              & 66.6\%             \\ \hline
+		\textbf{Feature level fusion (FLF)}  & 66.4\%              & 58.4\%             \\ \hline
+		\textbf{Decision level fusion (DLF)} & \textbf{76.4\%}              & \textbf{68.5\%}             \\ \hline
+	\end{tabular}
+}
+\end{table}
 Difference of results of both researches are really high. For FLF the percentage is  accordingly 66.4 \% and 73.59\%. EEG for PSD feature 62.1 \% and 71.77\% for DE feature.
 \section{Conclusion}
 
